@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 36b7a852c3fd449ccbb7658064d6945c
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walk_backward0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 150
+        width: 37
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_left0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 149
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_frontward0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 150
+        width: 37
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_right0
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 149
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_backward1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 101
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_left1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 101
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_frontward1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 101
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_right1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 101
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_backward2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 54
+        width: 37
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_left2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 53
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_frontward2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 54
+        width: 37
+        height: 31
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_right2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 53
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_backward3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 5
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_left3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 5
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_frontward3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 5
+        width: 37
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: walk_right3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 5
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: .5, y: 0}
+  spritePackingTag: 
+  userData: 
