@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 6bd56eb35fb48430697632b80636d90b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ladderPrefab: {fileID: 100000, guid: 7270c65a118c043fc9281f0294ac01f4, type: 2}
+  - ladderBlockPrefab: {fileID: 100000, guid: b00527e4fd07d4b06af9e8df2c2ddfe4, type: 2}
+  - floorPrefab: {fileID: 100000, guid: dc487b5269b3e467fb9f934b4bbbf7d3, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
