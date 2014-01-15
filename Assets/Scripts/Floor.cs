@@ -9,19 +9,19 @@ public class Floor : Swipe {
         floorPrefab = (GameObject)Resources.Load("floor");
     }
 
-    public void createFloor(SwipeInfo si) {
+    public void CreateFloor(SwipeInfo si) {
         swipeInfo = si;
         Vector2 touchStartPosition = swipeInfo.startPosition;
         int d = swipeInfo.direction == SwipeDirection.Right ? 1 : -1;
         Vector2 floorPos = new Vector2(touchStartPosition.x + d * swipeInfo.deltaX / 2, touchStartPosition.y);
-        if (checkLadder(floorPos)) {
+        if (CheckLadder(floorPos)) {
             floorPos = new Vector2(touchStartPosition.x + d * swipeInfo.deltaX / 2, touchStartPosition.y);
         }
         GameObject floor = (GameObject)Instantiate(floorPrefab, floorPos, transform.rotation);
         floor.transform.localScale = new Vector2(swipeInfo.deltaX, floor.transform.localScale.y);
     }
 
-    private bool checkLadder(Vector2 pos) {
+    private bool CheckLadder(Vector2 pos) {
         Vector2 touchStartPosition = swipeInfo.startPosition;
         Vector2 touchReleasePosition = swipeInfo.releasePosition;
         float floorHalfWidth = floorPrefab.renderer.bounds.size.x / 2;

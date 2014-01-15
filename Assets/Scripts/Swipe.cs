@@ -21,20 +21,20 @@ public class Swipe : MonoBehaviour {
             swipeInfo.startPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         } else if (Input.GetMouseButtonUp(0)) {
             swipeInfo.releasePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            setSwipeInfo();
+            SetSwipeInfo();
         }
     }
 
-    public static SwipeInfo getSwipeInfo() {
+    public static SwipeInfo GetSwipeInfo() {
         return swipeInfo;
     }
 
-    private void setSwipeInfo() {
-        setSwipeDistance();
-        setSwipeDirection();
+    private void SetSwipeInfo() {
+        SetSwipeDistance();
+        SetSwipeDirection();
     }
 
-    private void setSwipeDistance() {
+    private void SetSwipeDistance() {
         float sx = swipeInfo.startPosition.x;
         float sy = swipeInfo.startPosition.y;
         float rx = swipeInfo.releasePosition.x;
@@ -43,27 +43,27 @@ public class Swipe : MonoBehaviour {
         swipeInfo.deltaY = ry > sy ? ry - sy : sy - ry;
     }
 
-    private void setSwipeDirection() {
+    private void SetSwipeDirection() {
         float sx = swipeInfo.startPosition.x;
         float sy = swipeInfo.startPosition.y;
         float rx = swipeInfo.releasePosition.x;
         float ry = swipeInfo.releasePosition.y;
-        if (isSwipeHorizontal()) {
-            selectSwipeDirection(sx, rx, SwipeDirection.Right, SwipeDirection.Left);
+        if (IsSwipeHorizontal()) {
+            SelectSwipeDirection(sx, rx, SwipeDirection.Right, SwipeDirection.Left);
         } else {
-            selectSwipeDirection(sy, ry, SwipeDirection.Up, SwipeDirection.Down);
+            SelectSwipeDirection(sy, ry, SwipeDirection.Up, SwipeDirection.Down);
         }
     }
 
-    private bool isSwipeHorizontal() {
+    private bool IsSwipeHorizontal() {
         return swipeInfo.deltaY < swipeInfo.deltaX;
     }
 
-    private bool isSwipeVertical() {
+    private bool IsSwipeVertical() {
         return swipeInfo.deltaY > swipeInfo.deltaX;
     }
 
-    private void selectSwipeDirection(float sp, float rp, SwipeDirection d1, SwipeDirection d2) {
+    private void SelectSwipeDirection(float sp, float rp, SwipeDirection d1, SwipeDirection d2) {
         if ((rp > 0 && sp > 0) || (rp < 0 && sp < 0))
             swipeInfo.direction = rp > sp ? d1 : d2;
         else if (rp > 0 && sp < 0)

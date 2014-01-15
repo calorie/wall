@@ -10,7 +10,7 @@ public class Ladder : Swipe {
         ladderBlockPrefab = (GameObject)Resources.Load("ladder_block");
     }
 
-    public void createLadder(SwipeInfo swipeInfo) {
+    public void CreateLadder(SwipeInfo swipeInfo) {
         GameObject ladder = (GameObject)Instantiate(ladderPrefab, transform.position, transform.rotation);
         Vector2 touchStartPosition = swipeInfo.startPosition;
         float ladderBlockHeight = ladderBlockPrefab.renderer.bounds.size.y;
@@ -20,12 +20,12 @@ public class Ladder : Swipe {
             Vector2 ladderBlockPos = new Vector2(touchStartPosition.x, touchStartPosition.y +  ladderBlockHeight * i);
             GameObject ladderBlock = (GameObject)Instantiate(ladderBlockPrefab, ladderBlockPos, Quaternion.identity);
             ladderBlock.transform.parent = ladder.transform;
-            if (checkFloors(swipeInfo, ladderBlockPos))
+            if (CheckFloors(swipeInfo, ladderBlockPos))
                 break;
         }
     }
 
-    private bool checkFloors(SwipeInfo swipeInfo, Vector2 pos) {
+    private bool CheckFloors(SwipeInfo swipeInfo, Vector2 pos) {
         float ladderBlockHalfWidth = ladderBlockPrefab.renderer.bounds.size.x / 2;
         float ladderBlockHeight = ladderBlockPrefab.renderer.bounds.size.y;
         Vector2 pos1 = new Vector2(pos.x - ladderBlockHalfWidth, pos.y + ladderBlockHeight / 2);

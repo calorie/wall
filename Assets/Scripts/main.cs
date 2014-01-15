@@ -15,14 +15,14 @@ public class Main : Swipe {
     public override void Update () {
         base.Update();
         if (Input.GetMouseButtonUp(0)) {
-            swipeInfo = getSwipeInfo();
+            swipeInfo = GetSwipeInfo();
             switch(swipeInfo.direction) {
                 case SwipeDirection.Up:
-                    ladder.createLadder(swipeInfo);
+                    ladder.CreateLadder(swipeInfo);
                     break;
                 case SwipeDirection.Right:
                 case SwipeDirection.Left:
-                    floor.createFloor(swipeInfo);
+                    floor.CreateFloor(swipeInfo);
                     break;
             }
         }
