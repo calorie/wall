@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class main : Swipe {
+public class Main : Swipe {
 
     private SwipeInfo swipeInfo;
     private Ladder ladder;
