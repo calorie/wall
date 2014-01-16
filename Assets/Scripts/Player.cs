@@ -13,13 +13,13 @@ public class Player : MonoBehaviour {
     private Animator animator;
     private float? collapsedPosition = null;
 
-    void Awake () {
+    void Start () {
         animator = this.GetComponent<Animator>();
         action = Actions.Walk;
         frontCheck = transform.Find("frontCheck").transform;
     }
 
-    void FixedUpdate () {
+    void Update () {
         CheckFronts();
         PlayerAction();
     }
