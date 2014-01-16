@@ -48,11 +48,10 @@ public class Swipe : MonoBehaviour {
         float sy = swipeInfo.startPosition.y;
         float rx = swipeInfo.releasePosition.x;
         float ry = swipeInfo.releasePosition.y;
-        if (IsSwipeHorizontal()) {
+        if (IsSwipeHorizontal())
             SelectSwipeDirection(sx, rx, SwipeDirection.Right, SwipeDirection.Left);
-        } else {
+        else
             SelectSwipeDirection(sy, ry, SwipeDirection.Up, SwipeDirection.Down);
-        }
     }
 
     private bool IsSwipeHorizontal() {
