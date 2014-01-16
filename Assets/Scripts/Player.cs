@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
             case "LadderBlock":
                 if (collapsedPosition == null && action != Actions.Climb)
                     collapsedPosition = coll.gameObject.transform.position.x;
-                Physics2D.IgnoreLayerCollision(0, 8, true);
+                IgnoreFloorCollision();
                 action = Actions.Climb;
                 break;
         }
@@ -59,16 +59,12 @@ public class Player : MonoBehaviour {
     }
 
     private void CheckClimbed() {
-        if (action != Actions.Climb || collapsedPosition != null)
+        if (action != Actions.Climb || collapsedPosition != null || OnLadder())
             return;
-        Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
-        foreach (Collider2D c in hits)
-            if (c.tag == "LadderBlock")
-                return;
 
         rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         action = Actions.Walk;
-        Physics2D.IgnoreLayerCollision(0, 8, false);
+        SetFloorCollision();
     }
 
     private void PlayerAction() {
@@ -115,8 +111,29 @@ public class Player : MonoBehaviour {
     private bool LadderCenter() {
         if (collapsedPosition == null || Mathf.Abs((float)(collapsedPosition - transform.position.x)) < 0.01f) {
             collapsedPosition = null;
-            return true;
+            if (OnLadder()) {
+                return true;
+            } else {
+                action = Actions.Walk;
+                SetFloorCollision();
+            }
         }
         return false;
+    }
+
+    private bool OnLadder() {
+        Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
+        foreach (Collider2D c in hits)
+            if (c.tag == "LadderBlock")
+                return true;
+        return false;
+    }
+
+    private void IgnoreFloorCollision() {
+        Physics2D.IgnoreLayerCollision(0, 8, true);
+    }
+
+    private void SetFloorCollision() {
+        Physics2D.IgnoreLayerCollision(0, 8, false);
     }
 }
