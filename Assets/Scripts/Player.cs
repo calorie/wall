@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     }
 
     void Update () {
+        CheckClimbed();
         CheckFronts();
         PlayerAction();
     }
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour {
                 Application.LoadLevel("Clear");
                 break;
             case "Enemy":
-                Application.LoadLevel("gameover");
+                Application.LoadLevel("GameOver");
                 break;
         }
     }
@@ -48,7 +49,6 @@ public class Player : MonoBehaviour {
 
     private void CheckFronts() {
         Collider2D[] frontHits = Physics2D.OverlapPointAll(frontCheck.position);
-        CheckClimbed(frontHits);
         foreach (Collider2D c in frontHits) {
             switch (c.tag) {
                 case "Wall":
@@ -58,12 +58,17 @@ public class Player : MonoBehaviour {
         }
     }
 
-    private void CheckClimbed(Collider2D[] frontHits) {
-        if (frontHits.Length == 0 && action == Actions.Climb && collapsedPosition == null) {
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-            action = Actions.Walk;
-            Physics2D.IgnoreLayerCollision(0, 8, false);
-        }
+    private void CheckClimbed() {
+        if (action != Actions.Climb || collapsedPosition != null)
+            return;
+        Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
+        foreach (Collider2D c in hits)
+            if (c.tag == "LadderBlock")
+                return;
+
+        rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+        action = Actions.Walk;
+        Physics2D.IgnoreLayerCollision(0, 8, false);
     }
 
     private void PlayerAction() {

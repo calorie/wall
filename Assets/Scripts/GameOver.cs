@@ -11,6 +11,6 @@ public class GameOver : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (Input.GetMouseButtonUp(0))
-            Application.LoadLevel("main");
+            Application.LoadLevel("Main");
     }
 }
